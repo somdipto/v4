@@ -9,6 +9,7 @@ const locations = [
     link: "https://maps.app.goo.gl/BpzZFURf575rSh2u8",
     coordinates: [40.7128, -74.006],
   },
+  
   {
     name: "Trends Unisex Saloon",
     address: "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart),Bengaluru",
