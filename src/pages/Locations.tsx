@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 
@@ -10,54 +10,54 @@ const locations = [
     address: "184,3rd cross, Link Rd, Malleshwaram, Bengaluru, Karnataka 560003",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [12.995784605395825, 77.57368586724279] as [number, number],
+    coordinates: [12.995784605395825, 77.57368586724279],
   },
   {
     name: "Trends Unisex Saloon",
-    address: "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart),Bengaluru",
-    phone:"+918923477324",
-    hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [12.987444307249396, 77.54460931117136] as [number, number],
-  },
-  {
-    name: "Trends Unisex Saloon",
-    address: "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , karnataka 560024 ",
+    address:
+      "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart), Bengaluru",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [13.033676840844054, 77.5890606914712] as [number, number],
+    coordinates: [12.987444307249396, 77.54460931117136],
+  },
+  {
+    name: "Trends Unisex Saloon",
+    address:
+      "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , Karnataka 560024 ",
+    phone: "+918923477324",
+    hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
+    coordinates: [13.033676840844054, 77.5890606914712],
   },
 ];
 
 const Locations = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
 
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    mapboxgl.accessToken = "YOUR_MAPBOX_TOKEN";
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/light-v11",
-      center: [-73.9845, 40.7549],
-      zoom: 12,
-    });
+    const map = L.map(mapContainer.current).setView(
+      [12.995784605395825, 77.57368586724279],
+      12
+    );
 
+    // Add tile layer
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    // Add markers
     locations.forEach((location) => {
-      const marker = new mapboxgl.Marker()
-        .setLngLat(location.coordinates)
-        .setPopup(
-          new mapboxgl.Popup().setHTML(`
-            <h3 class="font-semibold">${location.name}</h3>
-            <p>${location.address}</p>
-          `)
-        )
-        .addTo(map.current!);
+      L.marker(location.coordinates)
+        .addTo(map)
+        .bindPopup(
+          `<h3 class="font-semibold">${location.name}</h3>
+           <p>${location.address}</p>`
+        );
     });
 
     return () => {
-      map.current?.remove();
+      map.remove();
     };
   }, []);
 
