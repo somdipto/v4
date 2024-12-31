@@ -8,12 +8,15 @@ import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
 import OffersCarousel from "@/components/OffersCarousel";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import FloatingOffer from "@/components/FloatingOffer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <FloatingOffer />
       <ImageCarousel />
       <ServicesMenu />
       <ExclusiveOffers />
@@ -22,6 +25,7 @@ const Index = () => {
       <Testimonials />
       <ContactForm />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
