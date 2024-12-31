@@ -81,7 +81,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         {/* Footer Bottom */}
         <div className="border-t border-gray-600 mt-8 pt-4 text-center text-gray-500">
           <p className="text-sm">&copy; {new Date().getFullYear()} Straight Studio. All rights reserved.</p>
