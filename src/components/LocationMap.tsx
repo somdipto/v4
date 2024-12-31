@@ -1,55 +1,56 @@
 import { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
 const locations = [
   {
-    name: "Downtown Branch",
-    address: "123 Main St, Downtown",
-    coordinates: [-74.006, 40.7128] as [number, number],
+    name: "Trends Unisex Saloon",
+    address: "184,3rd cross, Link Rd, Malleshwaram, Bengaluru, Karnataka 560003",
+    link: "https://maps.app.goo.gl/BpzZFURf575rSh2u8",
+    coordinates: [40.7128, -74.006],
+  },
+  
+  {
+    name: "Trends Unisex Saloon",
+    address: "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart),Bengaluru",
+    link: "https://maps.app.goo.gl/mBaJbEZAhPmLF34G7",
+    coordinates: [40.7829, -73.9654],
   },
   {
-    name: "Uptown Branch",
-    address: "456 Park Ave, Uptown",
-    coordinates: [-73.9654, 40.7829] as [number, number],
-  },
-  {
-    name: "Midtown Branch",
-    address: "789 Fifth Ave, Midtown",
-    coordinates: [-73.9845, 40.7549] as [number, number],
+    name: "Trends Unisex Saloon",
+    address: "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , karnataka 560024 ",
+    link: "https://maps.app.goo.gl/njUN35DWVAGE9nL6A",
+    coordinates: [40.7549, -73.9845],
   },
 ];
 
 const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
 
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    mapboxgl.accessToken = "YOUR_MAPBOX_TOKEN"; // Replace with your Mapbox token
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/light-v11",
-      center: [-73.9845, 40.7549] as [number, number],
-      zoom: 12,
-    });
+    // Initialize the map
+    const map = L.map(mapContainer.current).setView([40.7549, -73.9845], 12);
 
+    // Add OpenStreetMap tiles
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    // Add markers
     locations.forEach((location) => {
-      const marker = new mapboxgl.Marker()
-        .setLngLat(location.coordinates)
-        .setPopup(
-          new mapboxgl.Popup().setHTML(`
-            <h3 class="font-semibold">${location.name}</h3>
-            <p>${location.address}</p>
-          `)
-        )
-        .addTo(map.current!);
+      const marker = L.marker(location.coordinates).addTo(map);
+      marker.bindPopup(`
+        <div>
+          <h3 class="font-semibold">${location.name}</h3>
+          <p>${location.address}</p>
+        </div>
+      `);
     });
 
     return () => {
-      map.current?.remove();
+      map.remove();
     };
   }, []);
 
@@ -66,13 +67,17 @@ const LocationMap = () => {
             {locations.map((location) => (
               <div
                 key={location.name}
-                className="bg-white p-6 rounded-lg shadow-sm"
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
                 <h3 className="text-xl font-semibold mb-2">{location.name}</h3>
                 <p className="text-gray-600">{location.address}</p>
-                <button className="mt-4 text-black hover:underline">
+
+                <a
+                  className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
+                  href={location.link}
+                >
                   Get directions
-                </button>
+                </a>
               </div>
             ))}
           </div>
