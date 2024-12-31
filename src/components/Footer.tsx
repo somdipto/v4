@@ -6,13 +6,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50 text-gray-900 py-12">
+
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Us */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-black">About Us</h3>
-            <p className="text-gray-800 leading-relaxed">
-              Straight Studio is a premium hair & beauty salon offering top-quality services across Bangalore.
+
+            <h3 className="text-xl font-semibold mb-4">About Us</h3>
+            <p className="text-gray-300 leading-relaxed">
+            Trends Unisex Salon is a premium hair & beauty salon offering top-quality services across Bangalore.
             </p>
           </div>
 
@@ -59,8 +61,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@straight-studio.com" className="hover:text-black transition">
-                  Email: info@straight-studio.com
+
+                <a href="mailto:trendsUnisex@gmail.com" className="hover:text-white transition">
+                  Email: TrendsUnisex@gmail.com
+
+
                 </a>
               </li>
             </ul>

@@ -11,7 +11,7 @@ const FloatingOffer = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="whitespace-nowrap font-libre text-xl md:text-2xl text-black py-6"
+        className="whitespace-nowrap font-libre text-xl md:text-2xl text-white py-6"
       >
         🎉 Special Offer: Get 20% off on all services this week! Book your appointment now on WhatsApp
       </motion.div>

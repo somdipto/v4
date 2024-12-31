@@ -32,9 +32,9 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
+  
   return (
-    <div className="py-16 bg-[#F2FCE2]">
+    <div className="py-16 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -162,7 +162,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">info@trendssalon.com</p>
+                  <p className="text-gray-600">TrendsUnisex@gmail.com</p>
                 </div>
               </div>
             </div>
