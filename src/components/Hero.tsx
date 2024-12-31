@@ -18,6 +18,8 @@ const heroImages = [
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const whatsappNumber = "+917633894003";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -44,7 +46,7 @@ const Hero = () => {
             alt={image.alt}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/40" /> {/* Darker overlay for better text visibility */}
         </motion.div>
       ))}
       
@@ -56,27 +58,30 @@ const Hero = () => {
           className="space-y-6"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-libre mb-6 leading-tight"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             Elevate Your Style
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-libre"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
             Experience premium hair care and styling at Trends Unisex Salon
           </motion.p>
-          <motion.button
-            className="bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+          <motion.a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-libre hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Book Appointment
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </div>

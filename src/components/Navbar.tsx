@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const whatsappNumber = "+917633894003";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +23,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-white/60 backdrop-blur-xl shadow-lg" 
-          : "bg-transparent"
+          ? "navbar-blur" 
+          : "bg-black/30 backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,13 +54,16 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             ))}
-            <motion.button
+            <motion.a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors"
             >
               Book now
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
@@ -99,14 +104,17 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              <motion.button
+              <motion.a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full text-center px-3 py-2 text-white bg-black rounded-full"
+                className="w-full text-center block px-3 py-2 text-white bg-black rounded-full"
                 onClick={() => setIsOpen(false)}
               >
                 Book now
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}
