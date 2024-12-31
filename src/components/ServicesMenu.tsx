@@ -1,24 +1,31 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const services = [
   {
-    name: "Haircut & Styling",
-    description: "Expert haircuts and styling for all hair types",
+    name: "Professional Haircut",
+    description: "Expert haircuts tailored to your style",
     price: "₹999",
-    image: "/lovable-uploads/19df915f-d360-4164-963a-403c78f7539a.png",
+    image: "https://images.unsplash.com/photo-1634302086887-13b5679b3e10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
   {
     name: "Hair Treatment",
-    description: "Advanced treatments for healthy, beautiful hair",
+    description: "Revitalize your hair with premium treatments",
     price: "₹1,499",
-    image: "/lovable-uploads/917458d1-1bda-4b4e-8ec5-f33448824292.png",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
   {
-    name: "Premium Package",
-    description: "Complete hair makeover with premium products",
+    name: "Premium Styling",
+    description: "Complete hair transformation with expert styling",
     price: "₹1,999",
-    image: "/lovable-uploads/f6e63a05-16bc-41c2-be4b-08f24de54830.png",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
 ];
 
@@ -30,33 +37,38 @@ const ServicesMenu = () => {
           <h2 className="text-5xl font-serif mb-4">Our Services</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200"
-            >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.name}
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif mb-2">{service.name}</h3>
-                <p className="text-lg font-bold mb-2">{service.price}</p>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <Button variant="outline" className="w-full hover:bg-black hover:text-white transition-colors">
-                  Book now
-                </Button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent>
+            {services.map((service, index) => (
+              <CarouselItem key={service.name} className="md:basis-1/2 lg:basis-1/3">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200 m-2"
+                >
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif mb-2">{service.name}</h3>
+                    <p className="text-lg font-bold mb-2">{service.price}</p>
+                    <p className="text-gray-600 mb-6">{service.description}</p>
+                    <Button variant="outline" className="w-full hover:bg-black hover:text-white transition-colors">
+                      Book now
+                    </Button>
+                  </div>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-4" />
+          <CarouselNext className="right-4" />
+        </Carousel>
       </div>
     </div>
   );
