@@ -23,8 +23,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? "navbar-blur" 
-          : "bg-black/30 backdrop-blur-md"
+          ? "bg-white/80 backdrop-blur-lg shadow-sm" 
+          : "bg-white/80 backdrop-blur-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,12 +33,11 @@ const Navbar = () => {
             className="flex-shrink-0 flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <Link to="/" className="text-xl font-semibold text-black">
+            <Link to="/" className="text-xl font-libre text-black">
               Trends Unisex Salon
             </Link>
           </motion.div>
           
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {["services", "menu", "location", "contact"].map((item) => (
               <motion.div
@@ -48,7 +47,7 @@ const Navbar = () => {
               >
                 <Link
                   to={`/${item}`}
-                  className="text-black hover:text-gray-600 transition-colors capitalize"
+                  className="text-black font-libre hover:text-gray-600 transition-colors capitalize"
                 >
                   {item}
                 </Link>
@@ -58,15 +57,18 @@ const Navbar = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05,
+                x: 10,
+                transition: { duration: 0.2 }
+              }}
               whileTap={{ scale: 0.95 }}
-              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors"
+              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors font-libre"
             >
               Book now
             </motion.a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <motion.button
               whileTap={{ scale: 0.95 }}
@@ -79,7 +81,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
