@@ -2,35 +2,26 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
 const Menu = () => {
-  const menuItems = [
-    {
-      category: "Haircuts",
-      items: [
-        { name: "Women's Haircut", price: "$45+" },
-        { name: "Men's Haircut", price: "$30+" },
-        { name: "Children's Haircut", price: "$25+" },
-        { name: "Bang Trim", price: "$15+" },
-      ],
-    },
-    {
-      category: "Color Services",
-      items: [
-        { name: "Single Process Color", price: "$75+" },
-        { name: "Highlights", price: "$120+" },
-        { name: "Balayage", price: "$150+" },
-        { name: "Color Correction", price: "Consultation Required" },
-      ],
-    },
-    {
-      category: "Styling",
-      items: [
-        { name: "Blowout", price: "$45+" },
-        { name: "Special Occasion Style", price: "$75+" },
-        { name: "Bridal Hair", price: "$150+" },
-        { name: "Hair Extensions", price: "Consultation Required" },
-      ],
-    },
-  ];
+  const menuItems = {
+    "Hair Services": [
+      { name: "Women's Haircut", description: "Includes wash, cut, and style", price: "$45+" },
+      { name: "Men's Haircut", description: "Includes wash, cut, and style", price: "$30+" },
+      { name: "Children's Haircut", description: "Ages 12 and under", price: "$25+" },
+      { name: "Bang Trim", description: "Quick trim between cuts", price: "$15+" },
+    ],
+    "Color Services": [
+      { name: "Single Process Color", description: "Full color application", price: "$75+" },
+      { name: "Highlights", description: "Partial or full foils", price: "$120+" },
+      { name: "Balayage", description: "Hand-painted highlights", price: "$150+" },
+      { name: "Color Correction", description: "Consultation required", price: "Varies" },
+    ],
+    "Styling Services": [
+      { name: "Blowout", description: "Wash and style", price: "$45+" },
+      { name: "Special Occasion", description: "Formal styling", price: "$75+" },
+      { name: "Bridal Hair", description: "Includes trial", price: "$150+" },
+      { name: "Extensions", description: "Consultation required", price: "Varies" },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -42,30 +33,28 @@ const Menu = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold mb-4">Service Menu</h1>
-          <p className="text-gray-600">Our comprehensive list of services and prices</p>
+          <h1 className="text-5xl font-serif mb-4">Our Menu</h1>
+          <p className="text-gray-600">Comprehensive list of our services</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuItems.map((category) => (
+          {Object.entries(menuItems).map(([category, items], index) => (
             <motion.div
-              key={category.category}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white p-8 rounded-lg border border-gray-200"
             >
-              <h2 className="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">
-                {category.category}
-              </h2>
-              <div className="space-y-4">
-                {category.items.map((item) => (
-                  <div
-                    key={item.name}
-                    className="flex justify-between items-center"
-                  >
-                    <span className="text-gray-800">{item.name}</span>
-                    <span className="text-gray-600 font-medium">{item.price}</span>
+              <h2 className="text-2xl font-serif mb-6 text-center">{category}</h2>
+              <div className="space-y-6">
+                {items.map((item) => (
+                  <div key={item.name} className="border-b border-gray-100 pb-4">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-medium">{item.name}</h3>
+                      <span className="text-gray-900 font-medium">{item.price}</span>
+                    </div>
+                    <p className="text-sm text-gray-600">{item.description}</p>
                   </div>
                 ))}
               </div>
