@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
 import OffersCarousel from "@/components/OffersCarousel";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <LocationMap />
       <Testimonials />
       <ContactForm />
+      <Footer />
     </div>
   );
 };
