@@ -6,17 +6,17 @@ const locations = [
   {
     name: "Downtown Branch",
     address: "123 Main St, Downtown",
-    coordinates: [-74.006, 40.7128],
+    coordinates: [-74.006, 40.7128] as [number, number],
   },
   {
     name: "Uptown Branch",
     address: "456 Park Ave, Uptown",
-    coordinates: [-73.9654, 40.7829],
+    coordinates: [-73.9654, 40.7829] as [number, number],
   },
   {
     name: "Midtown Branch",
     address: "789 Fifth Ave, Midtown",
-    coordinates: [-73.9845, 40.7549],
+    coordinates: [-73.9845, 40.7549] as [number, number],
   },
 ];
 
@@ -32,7 +32,7 @@ const LocationMap = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [-73.9845, 40.7549],
+      center: [-73.9845, 40.7549] as [number, number],
       zoom: 12,
     });
 
