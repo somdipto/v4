@@ -7,20 +7,20 @@ const locations = [
     name: "Trends Unisex Saloon",
     address: "184,3rd cross, Link Rd, Malleshwaram, Bengaluru, Karnataka 560003",
     link: "https://maps.app.goo.gl/BpzZFURf575rSh2u8",
-    coordinates: [40.7128, -74.006],
+    coordinates: [12.995784605395825, 77.57368586724279],
   },
 
   {
     name: "Trends Unisex Saloon",
     address: "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart),Bengaluru",
     link: "https://maps.app.goo.gl/mBaJbEZAhPmLF34G7",
-    coordinates: [40.7829, -73.9654],
+    coordinates: [12.987444307249396, 77.54460931117136],
   },
   {
     name: "Trends Unisex Saloon",
     address: "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , karnataka 560024 ",
     link: "https://maps.app.goo.gl/njUN35DWVAGE9nL6A",
-    coordinates: [40.7549, -73.9845],
+    coordinates: [13.033676840844054, 77.5890606914712],
   },
 ];
 
@@ -73,7 +73,7 @@ const LocationMap = () => {
                 <p className="text-gray-600">{location.address}</p>
 
                 <a
-                  className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-gray-800 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
+                  className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-gray-900 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
                   href={location.link}
                 >
                   Get directions
@@ -90,3 +90,11 @@ const LocationMap = () => {
 };
 
 export default LocationMap;
+
+
+
+
+
+
+
+

@@ -59,8 +59,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@straight-studio.com" className="hover:text-white transition">
-                  Email: info@straight-studio.com
+                <a href="mailto:trendsUnisex@gmail.com" className="hover:text-white transition">
+                  Email: TrendsUnisex@gmail.com
                 </a>
               </li>
             </ul>
