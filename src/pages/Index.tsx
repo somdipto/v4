@@ -6,6 +6,7 @@ import LocationMap from "@/components/LocationMap";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
+import OffersCarousel from "@/components/OffersCarousel";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <ImageCarousel />
       <ServicesMenu />
       <ExclusiveOffers />
+      <OffersCarousel />
       <LocationMap />
       <Testimonials />
       <ContactForm />
