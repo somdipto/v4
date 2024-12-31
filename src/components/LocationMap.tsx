@@ -9,7 +9,7 @@ const locations = [
     link: "https://maps.app.goo.gl/BpzZFURf575rSh2u8",
     coordinates: [40.7128, -74.006],
   },
-  
+
   {
     name: "Trends Unisex Saloon",
     address: "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart),Bengaluru",
@@ -73,7 +73,7 @@ const LocationMap = () => {
                 <p className="text-gray-600">{location.address}</p>
 
                 <a
-                  className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
+                  className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-gray-800 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
                   href={location.link}
                 >
                   Get directions

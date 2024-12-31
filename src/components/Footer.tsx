@@ -5,14 +5,14 @@ export default function Footer() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white py-12">
+    <footer className="bg-gradient-to-b from-gray-950 to-neutral-800 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Us */}
           <div>
             <h3 className="text-xl font-semibold mb-4">About Us</h3>
             <p className="text-gray-300 leading-relaxed">
-              Straight Studio is a premium hair & beauty salon offering top-quality services across Bangalore.
+            Trends Unisex Salon is a premium hair & beauty salon offering top-quality services across Bangalore.
             </p>
           </div>
 
