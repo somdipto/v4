@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const FloatingOffer = () => {
   return (
-    <div className="w-full bg-black text-white overflow-hidden py-2">
+    <div className="floating-offer overflow-hidden">
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: "-100%" }}
@@ -11,7 +11,7 @@ const FloatingOffer = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="whitespace-nowrap text-lg font-medium"
+        className="whitespace-nowrap font-libre text-xl md:text-2xl"
       >
         🎉 Special Offer: Get 20% off on all services this week! Book your appointment now on WhatsApp
       </motion.div>

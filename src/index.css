@@ -1,3 +1,5 @@
+@import '@fontsource/libre-baskerville';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,6 +90,26 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+/* Custom font classes */
+.font-libre {
+  font-family: 'Libre Baskerville', serif;
+}
+
+/* Updated spacing for image carousel */
+.carousel-section {
+  @apply mt-16 mb-24 px-4 max-w-7xl mx-auto;
+}
+
+/* Enhanced navbar visibility */
+.navbar-blur {
+  @apply bg-white/80 backdrop-blur-lg shadow-sm;
+}
+
+/* Updated floating offer styles */
+.floating-offer {
+  @apply bg-black text-white font-libre text-lg md:text-xl py-4;
 }
 
 @layer base {
