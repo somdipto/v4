@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to our trends unisex salon project
 
 ## Project info
 
