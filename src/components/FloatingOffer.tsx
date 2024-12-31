@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const FloatingOffer = () => {
   return (
-    <div className="floating-offer mt-16 overflow-hidden bg-white">
+    <div className="floating-offer mt-16 overflow-hidden bg-[#f3f3f3]">
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: "-100%" }}
