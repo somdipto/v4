@@ -34,7 +34,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-[#F2FCE2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -42,8 +42,8 @@ const ContactForm = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-gray-600">We'd love to hear from you</p>
+          <h2 className="text-4xl font-libre mb-4">Get in Touch</h2>
+          <p className="text-gray-600 font-libre">We'd love to hear from you</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -51,7 +51,7 @@ const ContactForm = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-8 rounded-lg shadow-lg"
+            className="bg-white/80 backdrop-blur-xl p-8 rounded-lg shadow-lg"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -143,7 +143,7 @@ const ContactForm = () => {
             transition={{ duration: 0.5 }}
             className="space-y-8"
           >
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-white/80 backdrop-blur-xl p-6 rounded-lg shadow-lg">
               <div className="flex items-center space-x-4">
                 <div className="bg-black p-3 rounded-full">
                   <Phone className="text-white" size={24} />
@@ -155,7 +155,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-white/80 backdrop-blur-xl p-6 rounded-lg shadow-lg">
               <div className="flex items-center space-x-4">
                 <div className="bg-black p-3 rounded-full">
                   <Mail className="text-white" size={24} />
@@ -167,7 +167,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-white/80 backdrop-blur-xl p-6 rounded-lg shadow-lg">
               <div className="flex items-center space-x-4">
                 <div className="bg-black p-3 rounded-full">
                   <MapPin className="text-white" size={24} />

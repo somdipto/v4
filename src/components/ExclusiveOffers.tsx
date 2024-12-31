@@ -11,6 +11,7 @@ const offers = [
       "Basic styling",
       "10% off on products"
     ],
+    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
   },
   {
     title: "Intermediate",
