@@ -99,7 +99,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-800">
           <p className="text-sm">&copy; {new Date().getFullYear()} Straight Studio. All rights reserved.</p>
         </div>
