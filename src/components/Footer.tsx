@@ -1,101 +1,91 @@
-import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Logo and About */}
-          <div className="space-y-4">
-            <Link to="/" className="block">
-              <img src="/lovable-uploads/cb8c69bf-1b35-4c7e-baf8-fe1138065fbc.png" alt="Salon Logo" className="h-16 w-auto" />
-            </Link>
-            <p className="text-gray-300">
-              Experience premium hair care and styling at Trends Unisex Salon
+    <footer className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white py-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* About Us */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">About Us</h3>
+            <p className="text-gray-400 leading-relaxed">
+              Straight Studio is a premium hair & beauty salon offering top-quality services across Bangalore.
             </p>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Contact Us</h3>
-            <div className="space-y-2">
-              <a href="tel:+916366547532" className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
-                <Phone size={18} />
-                <span>+91 63665 47532</span>
-              </a>
-              <a href="mailto:info@trendssalon.com" className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
-                <Mail size={18} />
-                <span>info@trendssalon.com</span>
-              </a>
-              <a 
-                href="https://goo.gl/maps/your-location" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
-              >
-                <MapPin size={18} />
-                <span>Find our locations</span>
-              </a>
-            </div>
-          </div>
-
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Quick Links</h3>
-            <ul className="space-y-2">
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-3">
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link>
+                <a
+                  href="/services"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <Link to="/menu" className="text-gray-300 hover:text-white transition-colors">Price Menu</Link>
+                <a
+                  href="/appointment"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  Book Appointment
+                </a>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Book Appointment</Link>
+                <a
+                  href="/locations"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  Locations
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Follow Us</h3>
+          {/* Contact */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>Phone: +91 98864 58555</li>
+              <li>Email: info@straight-studio.com</li>
+            </ul>
+          </div>
+
+          {/* Follow Us */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a 
-                href="https://instagram.com/your-salon" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-500 transition"
+                aria-label="Facebook"
               >
-                <Instagram size={24} />
+                <Facebook size={28} />
               </a>
-              <a 
-                href="https://facebook.com/your-salon" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+              <a
+                href="#"
+                className="text-gray-400 hover:text-pink-500 transition"
+                aria-label="Instagram"
               >
-                <Facebook size={24} />
+                <Instagram size={28} />
               </a>
-              <a 
-                href="https://youtube.com/your-salon" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-400 transition"
+                aria-label="Twitter"
               >
-                <Youtube size={24} />
+                <Twitter size={28} />
               </a>
             </div>
           </div>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-center text-gray-400">
-            © {new Date().getFullYear()} Trends Unisex Salon. All rights reserved.
-          </p>
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-600 mt-8 pt-4 text-center text-gray-500">
+          <p className="text-sm">&copy; {new Date().getFullYear()} Straight Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
