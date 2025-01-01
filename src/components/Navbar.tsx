@@ -23,8 +23,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-white/80 backdrop-blur-xl" 
-          : "bg-[#ffffff] backdrop-blur-lg"
+          ? "bg-white/5 backdrop-blur-xl border-b border-white/10" 
+          : "bg-transparent backdrop-blur-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ const Navbar = () => {
                 transition: { duration: 0.2 }
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors font-libre"
+              className="bg-black/80 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-black transition-colors font-libre"
             >
               Book now
             </motion.a>
@@ -87,7 +87,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/90 backdrop-blur-lg border-b border-gray-100"
+            className="md:hidden bg-white/5 backdrop-blur-xl border-b border-white/10"
           >
             <div className="px-4 pt-2 pb-3 space-y-1">
               {["services", "menu", "location", "contact"].map((item) => (
@@ -98,7 +98,7 @@ const Navbar = () => {
                 >
                   <Link
                     to={`/${item}`}
-                    className="block px-3 py-2 text-black hover:bg-gray-50 rounded-md capitalize"
+                    className="block px-3 py-2 text-black hover:bg-black/5 rounded-md capitalize"
                     onClick={() => setIsOpen(false)}
                   >
                     {item}
@@ -111,7 +111,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full text-center block px-3 py-2 text-white bg-black rounded-full"
+                className="w-full text-center block px-3 py-2 text-white bg-black/80 backdrop-blur-sm rounded-full"
                 onClick={() => setIsOpen(false)}
               >
                 Book now
