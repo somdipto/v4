@@ -1,58 +1,44 @@
-import { useEffect, useRef } from "react";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import { useEffect, useState } from "react";
+import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 
 const locations = [
   {
     name: "Trends Unisex Saloon",
     address: "184,3rd cross, Link Rd, Malleshwaram, Bengaluru, Karnataka 560003",
     link: "https://maps.app.goo.gl/BpzZFURf575rSh2u8",
-    coordinates: [12.995784605395825, 77.57368586724279],
+    coordinates: { lat: 12.995784605395825, lng: 77.57368586724279 },
   },
-
   {
     name: "Trends Unisex Saloon",
     address: "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart),Bengaluru",
     link: "https://maps.app.goo.gl/mBaJbEZAhPmLF34G7",
-    coordinates: [12.987444307249396, 77.54460931117136],
+    coordinates: { lat: 12.987444307249396, lng: 77.54460931117136 },
   },
   {
     name: "Trends Unisex Saloon",
     address: "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , karnataka 560024 ",
     link: "https://maps.app.goo.gl/njUN35DWVAGE9nL6A",
-    coordinates: [13.033676840844054, 77.5890606914712],
+    coordinates: { lat: 13.033676840844054, lng: 77.5890606914712 },
   },
 ];
 
 const LocationMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
+  const [selectedLocation, setSelectedLocation] = useState<null | typeof locations[0]>(null);
+  const center = { lat: 13.0027, lng: 77.5669 }; // Bengaluru center
 
-  useEffect(() => {
-    if (!mapContainer.current) return;
+  const mapContainerStyle = {
+    width: "100%",
+    height: "500px",
+    borderRadius: "0.5rem",
+  };
 
-    // Initialize the map
-    const map = L.map(mapContainer.current).setView([40.7549, -73.9845], 12);
-
-    // Add OpenStreetMap tiles
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
-
-    // Add markers
-    locations.forEach((location) => {
-      const marker = L.marker(location.coordinates).addTo(map);
-      marker.bindPopup(`
-        <div>
-          <h3 class="font-semibold">${location.name}</h3>
-          <p>${location.address}</p>
-        </div>
-      `);
-    });
-
-    return () => {
-      map.remove();
-    };
-  }, []);
+  const options = {
+    disableDefaultUI: false,
+    zoomControl: true,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: true,
+  };
 
   return (
     <div className="py-16 bg-gray-50">
@@ -66,15 +52,16 @@ const LocationMap = () => {
           <div className="space-y-6">
             {locations.map((location) => (
               <div
-                key={location.name}
+                key={location.name + location.address}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
                 <h3 className="text-xl font-semibold mb-2">{location.name}</h3>
                 <p className="text-gray-600">{location.address}</p>
-
                 <a
                   className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-gray-900 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
                   href={location.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Get directions
                 </a>
@@ -82,7 +69,36 @@ const LocationMap = () => {
             ))}
           </div>
 
-          <div ref={mapContainer} className="h-[500px] rounded-lg shadow-lg" />
+          <div className="h-[500px] rounded-lg shadow-lg">
+            <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+              <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                zoom={12}
+                center={center}
+                options={options}
+              >
+                {locations.map((location) => (
+                  <Marker
+                    key={location.name + location.address}
+                    position={location.coordinates}
+                    onClick={() => setSelectedLocation(location)}
+                  />
+                ))}
+
+                {selectedLocation && (
+                  <InfoWindow
+                    position={selectedLocation.coordinates}
+                    onCloseClick={() => setSelectedLocation(null)}
+                  >
+                    <div>
+                      <h3 className="font-semibold">{selectedLocation.name}</h3>
+                      <p className="text-sm">{selectedLocation.address}</p>
+                    </div>
+                  </InfoWindow>
+                )}
+              </GoogleMap>
+            </LoadScript>
+          </div>
         </div>
       </div>
     </div>
@@ -90,11 +106,3 @@ const LocationMap = () => {
 };
 
 export default LocationMap;
-
-
-
-
-
-
-
-
