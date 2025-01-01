@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
+import type { LatLngTuple } from "leaflet";
 
 const locations = [
   {
@@ -10,7 +11,7 @@ const locations = [
     address: "184,3rd cross, Link Rd, Malleshwaram, Bengaluru, Karnataka 560003",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [12.995784605395825, 77.57368586724279],
+    coordinates: [12.995784605395825, 77.57368586724279] as LatLngTuple,
   },
   {
     name: "Trends Unisex Saloon",
@@ -18,7 +19,7 @@ const locations = [
       "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart), Bengaluru",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [12.987444307249396, 77.54460931117136],
+    coordinates: [12.987444307249396, 77.54460931117136] as LatLngTuple,
   },
   {
     name: "Trends Unisex Saloon",
@@ -26,7 +27,7 @@ const locations = [
       "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , Karnataka 560024 ",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [13.033676840844054, 77.5890606914712],
+    coordinates: [13.033676840844054, 77.5890606914712] as LatLngTuple,
   },
 ];
 
@@ -37,7 +38,7 @@ const Locations = () => {
     if (!mapContainer.current) return;
 
     const map = L.map(mapContainer.current).setView(
-      [12.995784605395825, 77.57368586724279],
+      [12.995784605395825, 77.57368586724279] as LatLngTuple,
       12
     );
 
