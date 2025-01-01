@@ -25,6 +25,21 @@ const locations = [
 const LocationMap = () => {
   const [selectedLocation, setSelectedLocation] = useState<null | typeof locations[0]>(null);
   const center = { lat: 13.0027, lng: 77.5669 }; // Bengaluru center
+  const [apiKey, setApiKey] = useState<string>("");
+
+  useEffect(() => {
+    // Fetch the API key from the environment
+    const fetchApiKey = async () => {
+      try {
+        const response = await fetch("/api/secrets/GOOGLE_MAPS_API_KEY");
+        const data = await response.json();
+        setApiKey(data.value);
+      } catch (error) {
+        console.error("Failed to fetch Google Maps API key:", error);
+      }
+    };
+    fetchApiKey();
+  }, []);
 
   const mapContainerStyle = {
     width: "100%",
@@ -39,6 +54,18 @@ const LocationMap = () => {
     streetViewControl: false,
     fullscreenControl: true,
   };
+
+  if (!apiKey) {
+    return (
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p>Loading map...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-16 bg-gray-50">
@@ -70,7 +97,7 @@ const LocationMap = () => {
           </div>
 
           <div className="h-[500px] rounded-lg shadow-lg">
-            <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+            <LoadScript googleMapsApiKey={apiKey}>
               <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 zoom={12}
