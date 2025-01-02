@@ -81,7 +81,7 @@ const LocationMap = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <div className="py-16 bg-gradient-to-b from-gray-50 to-white relative z-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ const LocationMap = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="h-[600px] rounded-xl shadow-lg overflow-hidden border border-gray-200"
+            className="h-[600px] rounded-xl shadow-lg overflow-hidden border border-gray-200 relative z-0"
           >
             <div ref={mapContainer} className="h-full w-full" />
           </motion.div>
