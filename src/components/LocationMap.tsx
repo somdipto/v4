@@ -111,12 +111,12 @@ const LocationMap = () => {
                   <p>{location.hours}</p>
                 </div>
                 <motion.a
-                  whileHover={{ scale: 1.02, backgroundColor: "#000000", color: "#FFFFFF" }}
+                  whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   href={`https://www.google.com/maps/search/?api=1&query=${location.coordinates[0]},${location.coordinates[1]}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 md:mt-4 inline-block px-4 md:px-6 py-2 bg-gray-100 text-black rounded-full transition-all duration-300 text-sm md:text-base hover:bg-black hover:text-white"
+                  className="mt-3 md:mt-4 inline-block px-6 py-2.5 bg-gray-100 text-black rounded-xl transition-all duration-250 hover:bg-black hover:text-white"
                 >
                   Get Directions
                 </motion.a>
@@ -132,29 +132,6 @@ const LocationMap = () => {
           >
             <div ref={mapContainer} className="h-full w-full" />
           </motion.div>
-        </div>
-
-        <div className="flex justify-center space-x-6 mt-8">
-          <motion.a
-            whileHover={{ scale: 1.05, backgroundColor: "#FFFFFF", color: "#000000" }}
-            whileTap={{ scale: 0.95 }}
-            href="https://wa.me/917633894003"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-black p-4 rounded-full text-white transition-all duration-300 border border-black hover:bg-white hover:text-black"
-          >
-            <MessageCircle size={24} />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.05, backgroundColor: "#FFFFFF", color: "#000000" }}
-            whileTap={{ scale: 0.95 }}
-            href="https://instagram.com/trends_unisex"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-black p-4 rounded-full text-white transition-all duration-300 border border-black hover:bg-white hover:text-black"
-          >
-            <Instagram size={24} />
-          </motion.a>
         </div>
       </div>
     </div>

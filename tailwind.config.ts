@@ -18,6 +18,15 @@ export default {
       },
     },
     extend: {
+      borderRadius: {
+        lg: "1rem",
+        md: "0.75rem",
+        sm: "0.5rem",
+        xl: "1.5rem",
+      },
+      transitionDuration: {
+        '250': '250ms',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
