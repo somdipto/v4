@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { motion } from "framer-motion";
+import type { LatLngTuple } from "leaflet";
 
 const locations = [
   {
@@ -8,7 +10,7 @@ const locations = [
     address: "184,3rd cross, Link Rd, Malleshwaram, Bengaluru, Karnataka 560003",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [12.995784605395825, 77.57368586724279],
+    coordinates: [12.995784605395825, 77.57368586724279] as LatLngTuple,
   },
   {
     name: "Trends Unisex Saloon",
@@ -16,15 +18,15 @@ const locations = [
       "483, 1st Stage, 6th Phase, 60 Feet Road WOC Road, Rajajinagar, (opp to Reliance Fresh Mart), Bengaluru",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [12.987444307249396, 77.54460931117136],
+    coordinates: [12.987444307249396, 77.54460931117136] as LatLngTuple,
   },
   {
     name: "Trends Unisex Saloon",
     address:
-      "Near Atria Institute of Technology , R.T Nagar , Hebbala, Bengaluru , Karnataka 560024 ",
+      "Near Atria Institute of Technology, R.T Nagar, Hebbala, Bengaluru, Karnataka 560024",
     phone: "+918923477324",
     hours: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM",
-    coordinates: [13.033676840844054, 77.5890606914712],
+    coordinates: [13.033676840844054, 77.5890606914712] as LatLngTuple,
   },
 ];
 
@@ -34,20 +36,17 @@ const LocationMap = () => {
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    // Initialize map centered on Bengaluru
     const map = L.map(mapContainer.current).setView(
-      [12.995784605395825, 77.57368586724279],
+      [12.995784605395825, 77.57368586724279] as LatLngTuple,
       12
     );
 
-    // Add OpenStreetMap tiles with a clean style
     L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19,
     }).addTo(map);
 
-    // Custom marker icon
     const customIcon = L.icon({
       iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
       iconSize: [25, 41],
@@ -57,15 +56,13 @@ const LocationMap = () => {
       shadowSize: [41, 41],
     });
 
-    // Add markers for each location
     locations.forEach((location) => {
-      const marker = L.marker(location.coordinates as [number, number], {
+      const marker = L.marker(location.coordinates, {
         icon: customIcon,
       }).addTo(map);
 
-      // Create popup content
       const popupContent = `
-        <div class="p-3">
+        <div class="p-4 min-w-[200px]">
           <h3 class="font-semibold text-lg mb-2">${location.name}</h3>
           <p class="text-sm text-gray-600 mb-2">${location.address}</p>
           <p class="text-sm text-gray-600 mb-2">${location.phone}</p>
@@ -76,52 +73,62 @@ const LocationMap = () => {
       marker.bindPopup(popupContent);
     });
 
-    // Add zoom controls
     map.zoomControl.setPosition("topright");
 
-    // Cleanup on unmount
     return () => {
       map.remove();
     };
   }, []);
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Locations</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold mb-4">Our Locations</h2>
           <p className="text-gray-600">Find a Trends Salon near you</p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
-            {locations.map((location) => (
-              <div
+            {locations.map((location, index) => (
+              <motion.div
                 key={location.name + location.address}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
               >
-                <h3 className="text-xl font-semibold mb-2">{location.name}</h3>
+                <h3 className="text-xl font-semibold mb-3">{location.name}</h3>
                 <div className="space-y-2 text-gray-600">
                   <p>{location.address}</p>
-                  <p>{location.phone}</p>
+                  <p className="font-medium">{location.phone}</p>
                   <p>{location.hours}</p>
                 </div>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${location.coordinates[0]},${location.coordinates[1]}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-block px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                  className="mt-4 inline-block px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200"
                 >
                   Get Directions
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div
-            ref={mapContainer}
-            className="h-[600px] rounded-lg shadow-lg overflow-hidden"
-          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="h-[600px] rounded-xl shadow-lg overflow-hidden border border-gray-200"
+          >
+            <div ref={mapContainer} className="h-full w-full" />
+          </motion.div>
         </div>
       </div>
     </div>
