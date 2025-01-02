@@ -1,4 +1,4 @@
-import { WhatsApp } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
@@ -19,7 +19,7 @@ const WhatsAppButton = () => {
         className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-250"
         aria-label="Chat on WhatsApp"
       >
-        <WhatsApp className="w-8 h-8 text-white" />
+        <MessageCircle className="w-8 h-8 text-white" />
       </a>
     </motion.div>
   );
