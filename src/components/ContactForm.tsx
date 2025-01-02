@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -18,7 +19,7 @@ const ContactForm = () => {
     const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
-    
+
     toast({
       title: "Message forwarded to WhatsApp!",
       description: "We'll get back to you as soon as possible.",
@@ -32,11 +33,11 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  
+
   return (
     <div className="py-16 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -173,8 +174,14 @@ const ContactForm = () => {
                   <MapPin className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Visit Us</h3>
-                  <p className="text-gray-600">Koramangala, Bangalore</p>
+                  <h2 className="font-semibold">Location</h2>
+
+                  <Link
+                    to={"/location"}
+                    className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-black hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
+                  >
+                    Visit us
+                  </Link>
                 </div>
               </div>
             </div>
