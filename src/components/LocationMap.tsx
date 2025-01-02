@@ -3,7 +3,6 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
 import type { LatLngTuple } from "leaflet";
-import { MessageCircle, Instagram } from "lucide-react";
 
 const locations = [
   {
@@ -98,7 +97,7 @@ const LocationMap = () => {
           <div className="space-y-4 md:space-y-6">
             {locations.map((location, index) => (
               <motion.div
-                key={location.name + location.address}
+                key={`${location.name}-${index}`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}

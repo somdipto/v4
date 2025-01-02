@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { WhatsApp } from "lucide-react";
 import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
@@ -16,10 +16,10 @@ const WhatsAppButton = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+        className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-250"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="w-8 h-8 text-white" />
+        <WhatsApp className="w-8 h-8 text-white" />
       </a>
     </motion.div>
   );
