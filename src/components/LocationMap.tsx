@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import type { LatLngTuple } from "leaflet";
 
 const locations = [
@@ -109,16 +110,15 @@ const LocationMap = () => {
                   <p className="font-medium">{location.phone}</p>
                   <p>{location.hours}</p>
                 </div>
-                <motion.a
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  href={`https://www.google.com/maps/search/?api=1&query=${location.coordinates[0]},${location.coordinates[1]}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 md:mt-4 inline-block px-6 py-2.5 bg-gray-100 text-black rounded-xl transition-all duration-250 hover:bg-black hover:text-white"
+                  onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${location.coordinates[0]},${location.coordinates[1]}`, '_blank')}
+                  className="mt-3 md:mt-4 inline-flex items-center gap-2 px-6 py-2.5 bg-gray-100 text-black rounded-full transition-all duration-250 hover:bg-black hover:text-white"
                 >
+                  <MapPin className="w-4 h-4" />
                   Get Directions
-                </motion.a>
+                </motion.button>
               </motion.div>
             ))}
           </div>
