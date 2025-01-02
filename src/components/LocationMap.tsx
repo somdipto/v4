@@ -114,7 +114,7 @@ const LocationMap = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${location.coordinates[0]},${location.coordinates[1]}`, '_blank')}
-                  className="mt-3 md:mt-4 inline-flex items-center gap-2 px-6 py-2.5 bg-gray-100 text-black rounded-full transition-all duration-250 hover:bg-black hover:text-white"
+                  className="mt-3 md:mt-4 inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-gray-100 to-gray-200 text-black rounded-full transition-all duration-250 hover:from-black hover:to-gray-800 hover:text-white shadow-sm hover:shadow-md"
                 >
                   <MapPin className="w-4 h-4" />
                   Get Directions
