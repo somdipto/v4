@@ -81,30 +81,30 @@ const LocationMap = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-gradient-to-b from-gray-50 to-white relative z-0">
+    <div className="py-8 md:py-16 bg-gradient-to-b from-gray-50 to-white relative z-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Our Locations</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Our Locations</h2>
           <p className="text-gray-600">Find a Trends Salon near you</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="space-y-4 md:space-y-6">
             {locations.map((location, index) => (
               <motion.div
                 key={location.name + location.address}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                className="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
               >
-                <h3 className="text-xl font-semibold mb-3">{location.name}</h3>
-                <div className="space-y-2 text-gray-600">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{location.name}</h3>
+                <div className="space-y-2 text-sm md:text-base text-gray-600">
                   <p>{location.address}</p>
                   <p className="font-medium">{location.phone}</p>
                   <p>{location.hours}</p>
@@ -113,7 +113,7 @@ const LocationMap = () => {
                   href={`https://www.google.com/maps/search/?api=1&query=${location.coordinates[0]},${location.coordinates[1]}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-block px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200"
+                  className="mt-3 md:mt-4 inline-block px-4 md:px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm md:text-base"
                 >
                   Get Directions
                 </a>
@@ -125,7 +125,7 @@ const LocationMap = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="h-[600px] rounded-xl shadow-lg overflow-hidden border border-gray-200 relative z-0"
+            className="h-[400px] md:h-[500px] lg:h-[550px] rounded-xl shadow-lg overflow-hidden border border-gray-200 relative z-0"
           >
             <div ref={mapContainer} className="h-full w-full" />
           </motion.div>
