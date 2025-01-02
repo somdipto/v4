@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Send, Phone, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
@@ -35,7 +35,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="py-16 bg-[#fdfdfd]">
+    <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,10 +127,10 @@ const ContactForm = () => {
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, backgroundColor: "#FFFFFF", color: "#000000" }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-black text-white py-3 px-6 rounded-md hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2"
+                className="w-full bg-black text-white py-3 px-6 rounded-md transition-all duration-300 border border-black hover:bg-white hover:text-black flex items-center justify-center space-x-2"
               >
                 <Send size={18} />
                 <span>Send Message</span>
@@ -174,16 +174,34 @@ const ContactForm = () => {
                   <MapPin className="text-white" size={24} />
                 </div>
                 <div>
-                  <h2 className="font-semibold">Location</h2>
-
+                  <h3 className="font-semibold">Location</h3>
                   <Link
                     to={"/location"}
-                    className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-black hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-blue-800"
+                    className="mt-5 inline-flex items-center justify-center px-4 py-2 bg-gray-100 hover:bg-black text-black hover:text-white font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 active:bg-gray-800"
                   >
                     Visit us
                   </Link>
                 </div>
               </div>
+            </div>
+
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://wa.me/917633894003"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-black p-4 rounded-full hover:bg-white hover:text-black text-white transition-all duration-300 border border-black"
+              >
+                <MessageCircle size={24} />
+              </a>
+              <a
+                href="https://instagram.com/trends_unisex"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-black p-4 rounded-full hover:bg-white hover:text-black text-white transition-all duration-300 border border-black"
+              >
+                <Instagram size={24} />
+              </a>
             </div>
           </motion.div>
         </div>
