@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
 import type { LatLngTuple } from "leaflet";
+import { MessageCircle, Instagram } from "lucide-react";
 
 const locations = [
   {
