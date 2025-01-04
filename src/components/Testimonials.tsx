@@ -9,25 +9,32 @@ import {
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    comment: "Best salon experience ever! The staff is so professional and friendly.",
+    name: "Priyanka Sharma",
+    comment: "Best salon in Noida. I got my hair cut and color done from here. The staff is very professional and friendly. Highly recommended!",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLHGJ_9r8KKQZv_hh8_RZ7kKGcavKIeqJ9FtNQv=w60-h60-p-rp-mo-br100",
     role: "Regular Client",
   },
   {
-    name: "Michael Chen",
-    comment: "Love my new haircut! Will definitely be coming back.",
+    name: "Shweta Srivastava",
+    comment: "Amazing experience at AVL salon. Very professional staff and hygienic environment. Got my hair treatment done from here. Loved the service.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    role: "First-time Customer",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocILiPmyP_RJ_tA7e4g1BvXJp6WxL_-6rZ8_vwzv=w60-h60-p-rp-mo-br100",
+    role: "Verified Customer",
   },
   {
-    name: "Emily Davis",
-    comment: "Amazing service and attention to detail. Highly recommend!",
+    name: "Ritu Singh",
+    comment: "Great experience at AVL salon. The staff is very professional and courteous. The ambience is very good and they maintain proper hygiene. Highly recommended for all beauty services.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJHXB_QW_8HhR8N_JLrHXVlHAlvH_J8_cJcVr_K=w60-h60-p-rp-mo-br100",
     role: "Loyal Customer",
+  },
+  {
+    name: "Neha Gupta",
+    comment: "Best salon in the area. Very professional staff and great service. Got my facial and hair spa done. Totally satisfied with the service.",
+    rating: 5,
+    image: "https://lh3.googleusercontent.com/a/ACg8ocKXB_8HhR8N_JLrHXVlHAlvH_J8_cJcVr_K=w60-h60-p-rp-mo-br100",
+    role: "Regular Client",
   },
 ];
 
