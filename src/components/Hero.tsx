@@ -46,7 +46,7 @@ const Hero = () => {
             alt={image.alt}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" /> {/* Darker overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30" />
         </motion.div>
       ))}
       
@@ -55,20 +55,27 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="space-y-6"
+          className="space-y-8"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-libre mb-6 leading-tight"
+            className="text-6xl md:text-8xl font-libre mb-8 leading-tight tracking-wider"
+            style={{
+              textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
+              background: "linear-gradient(to right, #ffffff, #e2e8f0)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
+            }}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             Elevate Your Style
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-libre"
+            className="text-2xl md:text-3xl mb-10 max-w-2xl mx-auto font-libre tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
+            style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.2)" }}
           >
             Experience premium hair care and styling at Trends Unisex Salon
           </motion.p>
@@ -76,7 +83,7 @@ const Hero = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-libre hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-white/90 text-black px-10 py-5 rounded-full text-xl font-libre hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
