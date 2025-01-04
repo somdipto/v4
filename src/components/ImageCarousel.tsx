@@ -3,16 +3,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
+    url: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    alt: "Premium salon interior with white decor",
+  },
+  {
     url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    alt: "Professional salon interior",
+    alt: "Elegant salon workspace",
   },
   {
-    url: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    alt: "Modern salon equipment",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    alt: "Luxury salon experience",
+    url: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    alt: "Modern salon equipment and styling area",
   },
 ];
 

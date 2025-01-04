@@ -13,19 +13,19 @@ const services = [
     name: "Professional Haircut",
     description: "Expert haircuts tailored to your style",
     price: "₹999",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
   {
     name: "Hair Treatment",
     description: "Revitalize your hair with premium treatments",
     price: "₹1,499",
-    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
   {
     name: "Premium Styling",
     description: "Complete hair transformation with expert styling",
     price: "₹1,999",
-    image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
 ];
 

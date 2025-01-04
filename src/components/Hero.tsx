@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    alt: "Woman getting professional hair treatment"
+    url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    alt: "Elegant salon interior with white theme"
   },
   {
-    url: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    alt: "Elegant hairstyling session"
+    url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    alt: "Premium salon styling station"
   },
   {
-    url: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    alt: "Professional hair coloring"
+    url: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    alt: "Luxurious salon atmosphere"
   }
 ];
 
