@@ -49,6 +49,18 @@ const Menu = () => {
       { name: "O3 WHITENING FACIAL", price: "₹3500" },
       { name: "O3 SEAWEED FACIAL", price: "₹3500" },
     ],
+    "NAIL CARE": [
+      { name: "REGULAR PEDICURE", price: "₹500" },
+      { name: "REGULAR MANICURE", price: "₹500" },
+      { name: "FOOT MASSAGE", price: "₹500" },
+      { name: "HEELS PEEL TREATMENT", price: "₹1500" },
+      { name: "AVL PEDICURE SPA", price: "₹1200" },
+      { name: "AVL MANICURE SPA", price: "₹1200" },
+      { name: "BOMBINI ICECREAM PEDICURE", price: "₹3000" },
+      { name: "BOMBINI ICECREAM MANICURE", price: "₹3000" },
+      { name: "ALGA PEDICURE", price: "₹3000" },
+      { name: "ALGA MANICURE", price: "₹3000" },
+    ],
     "RICA WAXING": [
       { name: "HALF LEG", price: "₹500" },
       { name: "FULL LEG", price: "₹800" },
