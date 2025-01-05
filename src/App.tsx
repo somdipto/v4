@@ -9,14 +9,17 @@ import WhatsAppButton from "./components/WhatsAppButton";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/location" element={<Locations />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <WhatsAppButton />
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/location" element={<Locations />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Index />} /> {/* Add catch-all route */}
+        </Routes>
+        <WhatsAppButton />
+      </div>
     </Router>
   );
 }
