@@ -9,26 +9,47 @@ import {
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    comment: "Best salon experience ever! The staff is so professional and friendly.",
+    name: "Satisfied Customer",
+    comment: "I am satisfied with my experience and would highly recommend The Trends Unisex Salon to anyone looking for fabulous hair and amazing service.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
     role: "Regular Client",
   },
   {
-    name: "Michael Chen",
-    comment: "Love my new haircut! Will definitely be coming back.",
+    name: "Happy Client",
+    comment: "Absolutely loved the services and staff specially Zainab and Soni. These ladies are incredibly professional and experienced. Moreover, I'm impressed by the way Zainab takes care of every detail. Both of them are very dedicated towards their work.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    role: "First-time Customer",
+    role: "Regular Customer",
   },
   {
-    name: "Emily Davis",
-    comment: "Amazing service and attention to detail. Highly recommend!",
+    name: "First-time Visitor",
+    comment: "I visited first time the salon, service was very nice and specially I'm very happy about the service of Sony madam which I have never experienced before. Really very awesome I felt.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    role: "Loyal Customer",
+    role: "New Customer",
   },
+  {
+    name: "Regular Client",
+    comment: "Hey Sony, it was a great experience with you... it was my 1st time and you made me comfortable... great service. Thank you!",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    role: "First-time Client",
+  },
+  {
+    name: "Spa Client",
+    comment: "I did hair spa.. it's nice to meet Miss Sony... she done the job with full of passion.. nice behaviour towards customer.. I loved it ❤️ Thank you Sony...",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    role: "Spa Customer",
+  },
+  {
+    name: "Relaxed Customer",
+    comment: "Thank you so much Sony... You were Excellent and friendly... Had a good massage and felt so relaxing... will recommend all",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    role: "Regular Client",
+  }
 ];
 
 const Testimonials = () => {
