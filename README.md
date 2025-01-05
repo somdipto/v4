@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/a7d98048-e0ee-4b9d-af88-0dff7d9f5e28
+**URL**: https://stylish-salon-website-93.vercel.app/
 
 **Use your preferred IDE**
 
