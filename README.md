@@ -4,7 +4,7 @@
 
 **URL**: https://stylish-salon-website-93.vercel.app/
 
-**vercel**: https://stylish-salon-website-93.vercel.app/
+**Vercel**: https://stylish-salon-website-93.vercel.app/
 
 **Use your preferred IDE**
 
