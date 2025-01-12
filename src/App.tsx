@@ -16,7 +16,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/location" element={<Locations />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Index />} /> {/* Add catch-all route */}
+          <Route path="*" element={<Index />} />
         </Routes>
         <WhatsAppButton />
       </div>
