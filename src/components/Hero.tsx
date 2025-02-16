@@ -1,18 +1,23 @@
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    alt: "Elegant salon interior with white theme"
+    url: "/lovable-uploads/a2be9e10-67aa-47ca-84e0-9dbefa526c51.png",
+    alt: "Modern salon interior with styling chairs"
   },
   {
-    url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    alt: "Premium salon styling station"
+    url: "/lovable-uploads/d926fc70-365f-464d-9e4b-41e880c68453.png",
+    alt: "Salon hallway with elegant design"
   },
   {
-    url: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    alt: "Luxurious salon atmosphere"
+    url: "/lovable-uploads/3514baad-2fe3-4ba3-92ee-94ed33d12139.png",
+    alt: "Professional salon workspace"
+  },
+  {
+    url: "/lovable-uploads/a7399b2a-a922-4a4c-93c0-a68b39139609.png",
+    alt: "Trends Unisex Salon storefront"
   }
 ];
 
@@ -29,7 +34,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-[90vh] sm:h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative h-[75vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
       {heroImages.map((image, index) => (
         <motion.div
           key={image.url}
@@ -41,12 +46,17 @@ const Hero = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0"
         >
-          <img
-            src={image.url}
-            alt={image.alt}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative w-full h-full">
+            <img
+              src={image.url}
+              alt={image.alt}
+              className="w-full h-full object-cover"
+              style={{
+                objectPosition: "center center"
+              }}
+            />
+            <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+          </div>
         </motion.div>
       ))}
       
@@ -58,14 +68,14 @@ const Hero = () => {
           className="space-y-6"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-libre mb-6 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-libre mb-6 leading-tight"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             Elevate Your Style
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-libre"
+            className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto font-libre"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -76,7 +86,7 @@ const Hero = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-libre hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-libre hover:bg-gray-100 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
