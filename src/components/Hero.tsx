@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1560869713-da86c87c4828?q=80&w=2070&auto=format&fit=crop",
-    alt: "Woman with beautiful wavy brown hair"
+    url: "https://images.unsplash.com/photo-1633657359703-4a0908852b5c?q=80&w=1974&auto=format&fit=crop",
+    alt: "Beautiful blonde woman with professional blowout"
   },
   {
-    url: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=2080&auto=format&fit=crop",
-    alt: "Woman with elegant blonde hairstyle"
+    url: "https://images.unsplash.com/photo-1628779238951-be2c9f2a59f4?q=80&w=2187&auto=format&fit=crop",
+    alt: "Elegant model with platinum blonde waves"
   },
   {
-    url: "https://images.unsplash.com/photo-1605980776566-0486c3ac7617?q=80&w=2070&auto=format&fit=crop",
-    alt: "Woman getting her hair styled professionally"
+    url: "https://images.unsplash.com/photo-1620331311520-246422b84f74?q=80&w=2187&auto=format&fit=crop",
+    alt: "Professional model with styled golden blonde hair"
   },
   {
-    url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop",
-    alt: "Woman with stunning long dark hair"
+    url: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=2070&auto=format&fit=crop",
+    alt: "Glamorous model with luxury salon styling"
   }
 ];
 
