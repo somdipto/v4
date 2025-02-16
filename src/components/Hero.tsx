@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=100&w=3000&auto=format&fit=crop",
-    alt: "Luxury blonde model with elegant updo hairstyle"
+    url: "/lovable-uploads/b3ba3ee8-bc91-4435-a5ec-7e064c5416d0.png",
+    alt: "Modern salon interior with elegant arched mirrors and wood accents"
   },
   {
-    url: "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?q=100&w=3000&auto=format&fit=crop",
-    alt: "Premium salon model with perfect blonde waves"
+    url: "/lovable-uploads/4b5da105-2cc3-46b2-a5ed-d95e263a3c1a.png",
+    alt: "Luxury salon with marble floors and pendant lighting"
   },
   {
-    url: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=100&w=3000&auto=format&fit=crop",
-    alt: "High-end salon client with platinum blonde styling"
+    url: "/lovable-uploads/374ad3e9-2987-40aa-9ba5-d2dc2ed40a0c.png",
+    alt: "Contemporary salon with natural decor and green elements"
   },
   {
-    url: "https://images.unsplash.com/photo-1562898161-a80f2d566bed?q=100&w=3000&auto=format&fit=crop",
-    alt: "Professional model with luxurious hair treatment"
+    url: "/lovable-uploads/4b8789a3-c86f-40ce-964e-e74c05d20b42.png",
+    alt: "Professional salon client with styled blonde waves"
   }
 ];
 
