@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1633657359703-4a0908852b5c?q=80&w=1974&auto=format&fit=crop",
-    alt: "Beautiful blonde woman with professional blowout"
+    url: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=100&w=3000&auto=format&fit=crop",
+    alt: "Luxury blonde model with elegant updo hairstyle"
   },
   {
-    url: "https://images.unsplash.com/photo-1628779238951-be2c9f2a59f4?q=80&w=2187&auto=format&fit=crop",
-    alt: "Elegant model with platinum blonde waves"
+    url: "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?q=100&w=3000&auto=format&fit=crop",
+    alt: "Premium salon model with perfect blonde waves"
   },
   {
-    url: "https://images.unsplash.com/photo-1620331311520-246422b84f74?q=80&w=2187&auto=format&fit=crop",
-    alt: "Professional model with styled golden blonde hair"
+    url: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=100&w=3000&auto=format&fit=crop",
+    alt: "High-end salon client with platinum blonde styling"
   },
   {
-    url: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=2070&auto=format&fit=crop",
-    alt: "Glamorous model with luxury salon styling"
+    url: "https://images.unsplash.com/photo-1562898161-a80f2d566bed?q=100&w=3000&auto=format&fit=crop",
+    alt: "Professional model with luxurious hair treatment"
   }
 ];
 
@@ -52,10 +52,10 @@ const Hero = () => {
               alt={image.alt}
               className="w-full h-full object-cover"
               style={{
-                objectPosition: "center center"
+                objectPosition: "center 20%"
               }}
             />
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
           </div>
         </motion.div>
       ))}
