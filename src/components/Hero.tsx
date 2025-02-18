@@ -50,10 +50,7 @@ const Hero = () => {
             <img
               src={image.url}
               alt={image.alt}
-              className="w-full h-full object-cover"
-              style={{
-                objectPosition: "center 20%"
-              }}
+              className="w-full h-[75vh] md:h-[85vh] object-cover"
             />
             <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
           </div>

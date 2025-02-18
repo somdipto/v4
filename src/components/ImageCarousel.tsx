@@ -50,7 +50,7 @@ const ImageCarousel = () => {
             <img
               src={image.url}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              className="w-full h-[400px] object-cover"
             />
           </div>
         ))}
